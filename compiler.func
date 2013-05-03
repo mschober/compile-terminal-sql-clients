@@ -1,0 +1,14 @@
+#!/bin/bash
+
+function _make {
+  ./configure $@
+  make
+  make install
+  make clean
+}
+
+function _break {
+  make uninstall
+  make clean
+}
+
