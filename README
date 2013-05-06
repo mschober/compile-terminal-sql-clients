@@ -1,1 +1,7 @@
-sqlserver.sh is incomplete, 1) mkdir -p /Users/mschober/apps/archives 2) cd master 3) /Users/mschober/bin/unixODBC.sh -i 4) /Users/mschober/bin/freetds.sh -i 5) which isql osql
+sqlserver.sh is incomplete,
+1) mkdir -p $HOME/apps/archives
+2) cd master
+3.optional) $HOME/bin/autoconf.sh -i #only if you don't have autoreconf
+3) $HOME/bin/unixODBC.sh -i
+4) $HOME/bin/freetds.sh -i
+5) which isql osql
