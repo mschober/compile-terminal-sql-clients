@@ -28,6 +28,12 @@ LOCAL=$HOME/apps/usr/local
 #}
 #
 #while getopts iu opt; do
+      echo 'installing $ODBC'
+      trap _install SIGINT SIGTERM SIGKILL
+      ;;
+    u)
+      echo 'uninstalling $ODBC'
+      trap _uninstall SIGINT SIGTERM SIGKILL
 #  case $opt in
 #    i)
 #      echo 'installing $SQLSERVER'

@@ -12,7 +12,7 @@ cd $HOME/apps/archives
 
 function download_freetds {
   test -f $ARCHIVES/$FREETDS_TAR && echo "$FREETDS_TAR already downloaded" && return
-  wget ftp://ftp.freetds.org/pub/FREETDS_DIR/stable/freetds-stable.tgz
+  wget ftp://ftp.freetds.org/pub/freetds/stable/freetds-stable.tgz
 }
 
 function _install {
