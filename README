@@ -1,7 +1,18 @@
-sqlserver.sh is incomplete,
-1) mkdir -p $HOME/apps/archives
-2) cd $HOME/apps/archives
-3.optional) $HOME/bin/autoconf.sh -i #only if you don't have autoreconf
-3) $HOME/bin/unixODBC.sh -i
-4) $HOME/bin/freetds.sh -i
-5) which isql osql
+INSTALL---
+If [ -z $(which autoreconf) ] ; then
+  $SCRIPTS/autoconf.sh -i <optional-install-dir>
+fi
+
+$SCRIPTS/unixODBC.sh -i <optional-install-dir>
+$SCRIPTS/freetds.sh -i <optional-install-dir>
+
+
+UNINSTALL---
+If [ -z $(which autoreconf) ] ; then
+  $SCRIPTS/autoconf.sh -u
+fi
+
+$SCRIPTS/unixODBC.sh -u
+$SCRIPTS/freetds.sh -u
+
+
