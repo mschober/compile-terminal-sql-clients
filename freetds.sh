@@ -1,5 +1,7 @@
 #!/bin/bash
 
+_USAGE $@
+
 APP=freetds-0.91
 APP_TAR=freetds-stable.tgz
 DOWNLOAD_COMMANDS="\
@@ -13,6 +15,3 @@ INSTALL_COMMANDS="\
 "
 
 source compiler.func
-
-_USAGE $@
-

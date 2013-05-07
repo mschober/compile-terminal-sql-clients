@@ -1,5 +1,7 @@
 #!/bin/bash
 
+_USAGE $@
+
 APP=autoconf-2.69
 APP_TAR=$APP.tar.gz
 DOWNLOAD_COMMANDS="\
@@ -14,4 +16,3 @@ INSTALL_COMMANDS="\
 
 source compiler.func
 
-_USAGE $@

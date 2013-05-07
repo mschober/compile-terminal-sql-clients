@@ -1,5 +1,7 @@
 #!/bin/bash
 
+_USAGE $@
+
 APP=unixODBC-2.3.1
 APP_TAR=$APP.tar.gz
 DOWNLOAD_COMMANDS="\
@@ -13,5 +15,3 @@ INSTALL_COMMANDS="\
 "
 
 source compiler.func
-
-_USAGE $@
