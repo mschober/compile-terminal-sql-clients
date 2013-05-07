@@ -1,5 +1,38 @@
 #!/bin/bash
 
+LOCAL=${2:-$HOME/apps/usr/local}
+ARCHIVES=$HOME/apps/archives
+
+cd $ARCHIVES
+echo $(pwd)
+
+_SCRIPT_NAME() {
+  echo $(BASENAME $0)
+}
+
+_USAGE() {
+  [[ $# -ne 1 ]] && echo "usage $(_SCRIPT_NAME) -i or $(_SCRIPT_NAME) -u" && exit 1
+}
+
+_CHECK_FOR_DOWNLOADED() {
+  test -f $APP_TAR && echo "$APP_TAR already downloaded"
+}
+
+function _install {
+  echo -e $DOWNLOAD_COMMANDS
+  eval $DOWNLOAD_COMMANDS
+  echo -e $INSTALL_COMMANDS
+  eval $INSTALL_COMMANDS
+}
+
+function _uninstall {
+  [[ ! -d $APP ]] && echo "$APP_TAR does not exist" && return
+  cd $APP
+  _break
+  cd ..
+  rm -rf $APP
+}
+
 function _make {
   ./configure $@
   make
@@ -12,3 +45,17 @@ function _break {
   make clean
 }
 
+while getopts iu opt; do
+  case $opt in
+    i)
+      echo "installing $APP"
+      #trap _uninstall SIGINT
+      _install
+      ;;
+    u)
+      echo "uninstalling $APP"
+      #trap _uninstall SIGINT
+      _uninstall
+      ;;
+  esac
+done
