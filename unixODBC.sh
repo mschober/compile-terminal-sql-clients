@@ -2,8 +2,8 @@
 
 _USAGE $@
 
-APP=${1:-'unixODBC-2.3.1'}
-APP_TAR=${2:-'APP.tar.gz'}
+APP=unixODBC-2.3.1
+APP_TAR=APP.tar.gz
 DOWNLOAD_COMMANDS="\
   _CHECK_FOR_DOWNLOADED || wget ftp://ftp.unixodbc.org/pub/unixODBC/$APP_TAR
 "
