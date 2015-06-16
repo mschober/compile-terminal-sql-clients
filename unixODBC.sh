@@ -1,6 +1,6 @@
 #!/bin/bash
 
-_USAGE $@
+#_USAGE $@
 
 APP=unixODBC-2.3.1
 APP_TAR=$APP.tar.gz
