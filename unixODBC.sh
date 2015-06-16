@@ -3,7 +3,7 @@
 _USAGE $@
 
 APP=unixODBC-2.3.1
-APP_TAR=APP.tar.gz
+APP_TAR=$APP.tar.gz
 DOWNLOAD_COMMANDS="\
   _CHECK_FOR_DOWNLOADED || wget ftp://ftp.unixodbc.org/pub/unixODBC/$APP_TAR
 "
