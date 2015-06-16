@@ -1,9 +1,9 @@
 #!/bin/bash
 
 LOCAL=${2:-$HOME/apps/usr/local}
-ARCHIVES=$HOME/apps/archives
+#ARCHIVES=$HOME/apps/archives
 
-cd $ARCHIVES
+#cd $ARCHIVES
 echo $(pwd)
 
 _SCRIPT_NAME() {
