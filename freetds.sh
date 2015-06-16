@@ -2,8 +2,8 @@
 
 _USAGE $@
 
-APP=freetds-0.91
-APP_TAR=freetds-stable.tgz
+APP=${1:-freetds-0.91}
+APP_TAR=${2:-freetds-stable.tgz}
 DOWNLOAD_COMMANDS="\
   _CHECK_FOR_DOWNLOADED || wget ftp://ftp.freetds.org/pub/freetds/stable/$APP_TAR
 "
